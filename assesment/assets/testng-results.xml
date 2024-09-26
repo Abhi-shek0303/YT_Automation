@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="5" passed="4" failed="0" skipped="1">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-09-26T08:17:29Z" name="Test Suite for Buildout" finished-at="2024-09-26T08:18:55Z" duration-ms="85691">
+    <groups>
+    </groups>
+    <test started-at="2024-09-26T08:17:29Z" name="Test Cases for Buildout" finished-at="2024-09-26T08:18:55Z" duration-ms="85691">
+      <class name="demo.TestCases">
+        <test-method is-config="true" signature="createDriver()[pri:0, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:47:29Z" name="createDriver" finished-at="2024-09-26T13:47:36Z" duration-ms="6257" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createDriver -->
+        <test-method is-config="true" signature="driverGet()[pri:0, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:47:36Z" name="driverGet" finished-at="2024-09-26T13:47:50Z" duration-ms="14326" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverGet -->
+        <test-method signature="TestCase001()[pri:1, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:47:50Z" name="TestCase001" description="Verify youtube url and print about page message" finished-at="2024-09-26T13:48:25Z" duration-ms="34675" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase001 -->
+        <test-method is-config="true" signature="driverGet()[pri:0, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:48:25Z" name="driverGet" finished-at="2024-09-26T13:48:27Z" duration-ms="2252" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverGet -->
+        <test-method signature="TestCase004()[pri:1, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:48:27Z" name="TestCase004" description="Verify news body and likes" finished-at="2024-09-26T13:48:38Z" duration-ms="11531" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase004 -->
+        <test-method is-config="true" signature="driverGet()[pri:0, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:48:38Z" name="driverGet" finished-at="2024-09-26T13:48:41Z" duration-ms="2736" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverGet -->
+        <test-method signature="TestCase005(java.lang.String)[pri:1, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:48:38Z" name="TestCase005" description="Verify video views count" data-provider="searchTerms" finished-at="2024-09-26T13:48:38Z" duration-ms="0" status="SKIP">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Method public void demo.TestCases.TestCase005(java.lang.String) requires a @DataProvider named : searchTerms in class demo.utils.ExcelDataProvider]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Method public void demo.TestCases.TestCase005(java.lang.String) requires a @DataProvider named : searchTerms in class demo.utils.ExcelDataProvider
+	at org.testng.internal.Parameters.findDataProvider(Parameters.java:263)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:419)
+	at org.testng.internal.Invoker.handleParameters(Invoker.java:1274)
+	at org.testng.internal.Invoker.createParameters(Invoker.java:989)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1079)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:146)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:91)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase005 -->
+        <test-method signature="TestCase002()[pri:2, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:48:41Z" name="TestCase002" description="Verify movie is marked &#039;A&#039; for Mature and movie is either &#039;Comedy&#039; or &#039;Animation&#039;" finished-at="2024-09-26T13:48:45Z" duration-ms="3512" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase002 -->
+        <test-method is-config="true" signature="driverGet()[pri:0, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:48:45Z" name="driverGet" finished-at="2024-09-26T13:48:47Z" duration-ms="2358" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverGet -->
+        <test-method signature="TestCase003()[pri:2, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:48:47Z" name="TestCase003" description="Verify number of tracks is 50 or less" finished-at="2024-09-26T13:48:53Z" duration-ms="6187" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase003 -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:48:53Z" name="quitDriver" finished-at="2024-09-26T13:48:55Z" duration-ms="1766" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- demo.TestCases -->
+    </test> <!-- Test Cases for Buildout -->
+  </suite> <!-- Test Suite for Buildout -->
+</testng-results>
