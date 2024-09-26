@@ -2,36 +2,32 @@
 <testng-results total="5" passed="4" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-26T08:17:29Z" name="Test Suite for Buildout" finished-at="2024-09-26T08:18:55Z" duration-ms="85691">
+  <suite started-at="2024-09-26T08:31:10Z" name="Test Suite for Buildout" finished-at="2024-09-26T08:31:57Z" duration-ms="47517">
     <groups>
     </groups>
-    <test started-at="2024-09-26T08:17:29Z" name="Test Cases for Buildout" finished-at="2024-09-26T08:18:55Z" duration-ms="85691">
+    <test started-at="2024-09-26T08:31:10Z" name="Test Cases for Buildout" finished-at="2024-09-26T08:31:57Z" duration-ms="47517">
       <class name="demo.TestCases">
-        <test-method is-config="true" signature="createDriver()[pri:0, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:47:29Z" name="createDriver" finished-at="2024-09-26T13:47:36Z" duration-ms="6257" status="PASS">
+        <test-method is-config="true" signature="createDriver()[pri:0, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T14:01:10Z" name="createDriver" finished-at="2024-09-26T14:01:15Z" duration-ms="5084" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createDriver -->
-        <test-method is-config="true" signature="driverGet()[pri:0, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:47:36Z" name="driverGet" finished-at="2024-09-26T13:47:50Z" duration-ms="14326" status="PASS">
+        <test-method is-config="true" signature="driverGet()[pri:0, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T14:01:15Z" name="driverGet" finished-at="2024-09-26T14:01:29Z" duration-ms="14662" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverGet -->
-        <test-method signature="TestCase001()[pri:1, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:47:50Z" name="TestCase001" description="Verify youtube url and print about page message" finished-at="2024-09-26T13:48:25Z" duration-ms="34675" status="PASS">
+        <test-method signature="TestCase001()[pri:1, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T14:01:29Z" name="TestCase001" description="Verify youtube url and print about page message" finished-at="2024-09-26T14:01:32Z" duration-ms="2878" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase001 -->
-        <test-method is-config="true" signature="driverGet()[pri:0, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:48:25Z" name="driverGet" finished-at="2024-09-26T13:48:27Z" duration-ms="2252" status="PASS">
+        <test-method is-config="true" signature="driverGet()[pri:0, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T14:01:32Z" name="driverGet" finished-at="2024-09-26T14:01:35Z" duration-ms="2627" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverGet -->
-        <test-method signature="TestCase004()[pri:1, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:48:27Z" name="TestCase004" description="Verify news body and likes" finished-at="2024-09-26T13:48:38Z" duration-ms="11531" status="PASS">
+        <test-method signature="TestCase004()[pri:1, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T14:01:35Z" name="TestCase004" description="Verify news body and likes" finished-at="2024-09-26T14:01:44Z" duration-ms="9288" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase004 -->
-        <test-method is-config="true" signature="driverGet()[pri:0, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:48:38Z" name="driverGet" finished-at="2024-09-26T13:48:41Z" duration-ms="2736" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverGet -->
-        <test-method signature="TestCase005(java.lang.String)[pri:1, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:48:38Z" name="TestCase005" description="Verify video views count" data-provider="searchTerms" finished-at="2024-09-26T13:48:38Z" duration-ms="0" status="SKIP">
+        <test-method signature="TestCase005(java.lang.String)[pri:1, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T14:01:44Z" name="TestCase005" description="Verify video views count" data-provider="searchTerms" finished-at="2024-09-26T14:01:44Z" duration-ms="0" status="SKIP">
           <exception class="org.testng.TestNGException">
             <message>
               <![CDATA[
@@ -85,19 +81,23 @@ Method public void demo.TestCases.TestCase005(java.lang.String) requires a @Data
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase005 -->
-        <test-method signature="TestCase002()[pri:2, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:48:41Z" name="TestCase002" description="Verify movie is marked &#039;A&#039; for Mature and movie is either &#039;Comedy&#039; or &#039;Animation&#039;" finished-at="2024-09-26T13:48:45Z" duration-ms="3512" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestCase002 -->
-        <test-method is-config="true" signature="driverGet()[pri:0, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:48:45Z" name="driverGet" finished-at="2024-09-26T13:48:47Z" duration-ms="2358" status="PASS">
+        <test-method is-config="true" signature="driverGet()[pri:0, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T14:01:44Z" name="driverGet" finished-at="2024-09-26T14:01:47Z" duration-ms="2549" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverGet -->
-        <test-method signature="TestCase003()[pri:2, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:48:47Z" name="TestCase003" description="Verify number of tracks is 50 or less" finished-at="2024-09-26T13:48:53Z" duration-ms="6187" status="PASS">
+        <test-method signature="TestCase002()[pri:2, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T14:01:47Z" name="TestCase002" description="Verify movie is marked &#039;A&#039; for Mature and movie is either &#039;Comedy&#039; or &#039;Animation&#039;" finished-at="2024-09-26T14:01:50Z" duration-ms="2886" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase002 -->
+        <test-method is-config="true" signature="driverGet()[pri:0, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T14:01:50Z" name="driverGet" finished-at="2024-09-26T14:01:52Z" duration-ms="2098" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverGet -->
+        <test-method signature="TestCase003()[pri:2, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T14:01:52Z" name="TestCase003" description="Verify number of tracks is 50 or less" finished-at="2024-09-26T14:01:56Z" duration-ms="4432" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase003 -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T13:48:53Z" name="quitDriver" finished-at="2024-09-26T13:48:55Z" duration-ms="1766" status="PASS">
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:demo.TestCases@2e9fda69]" started-at="2024-09-26T14:01:56Z" name="quitDriver" finished-at="2024-09-26T14:01:57Z" duration-ms="984" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitDriver -->
