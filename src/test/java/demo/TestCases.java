@@ -1,169 +1,208 @@
 package demo;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.logging.LogType;
+import org.openqa.selenium.logging.LoggingPreferences;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import demo.utils.ActionsWrapper;
-// import demo.utils.ExcelDataProvider;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import java.time.Duration;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import demo.utils.ExcelDataProvider;
-import demo.utils.YouTubeUtils;
+// import io.github.bonigarcia.wdm.WebDriverManager;
+//import demo.wrappers.Wrappers;
 
-public class TestCases {
-    WebDriver driver;
-    SoftAssert sa = new SoftAssert();
+public class TestCases extends ExcelDataProvider { // Lets us read the data
+    ChromeDriver driver;
 
-    @BeforeClass
-    public void createDriver() {
-        YouTubeUtils.logStatus("createDriver", "Creating driver");
+    /*
+     * TODO: Write your tests here with testng @Test annotation.
+     * Follow `testCase01` `testCase02`... format or what is provided in
+     * instructions
+     */
 
-        // Setting up ChromeOptions with desired arguments
+    /*
+     * Do not change the provided methods unless necessary, they will help in
+     * automation and assessment
+     */
+    @BeforeTest
+    public void startBrowser() {
+        System.setProperty("java.util.logging.config.file", "logging.properties");
+
+        // NOT NEEDED FOR SELENIUM MANAGER
+        // WebDriverManager.chromedriver().timeout(30).setup();
+
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("start-maximized");
-        options.addArguments("--disable-blink-features=AutomationControlled");
+        LoggingPreferences logs = new LoggingPreferences();
 
-        // Creating a Chrome WebDriver instance with the specified options
+        logs.enable(LogType.BROWSER, Level.ALL);
+        logs.enable(LogType.DRIVER, Level.ALL);
+        options.setCapability("goog:loggingPrefs", logs);
+        options.addArguments("--remote-allow-origins=*");
+
+        System.setProperty(ChromeDriverService.CHROME_DRIVER_LOG_PROPERTY, "build/chromedriver.log");
+
         driver = new ChromeDriver(options);
 
-        YouTubeUtils.logStatus("createDriver", "Done driver creation");
+        driver.manage().window().maximize();
     }
 
-    @AfterClass
-    public void quitDriver() {
-        YouTubeUtils.logStatus("quitDriver", "Quitting driver");
-        // Quit the WebDriver instance
-        if (driver != null) {
-            driver.quit();
+    @Test
+    public void testCase01() throws InterruptedException {
+        System.out.println("Start Test Case : Test Case 01");
+        driver.get("https://www.youtube.com/");
+        String url = driver.getCurrentUrl();
+
+        Assert.assertTrue(url.contains("youtube"), "URL Verification Passed");
+
+        System.out.println("Verification done");
+
+        WebElement tripleLines = driver.findElement(By.cssSelector("#guide-icon"));
+        tripleLines.click();
+        System.out.println("triplelines clicked!!!");
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='About']")));
+        element.click();
+
+        // Thread.sleep(10000);
+
+        // WebElement about = driver.findElement(By.xpath("//a[text()='About']"));
+        // about.click();
+
+        System.out.println("about CLICKED !!!!!!");
+
+        List<WebElement> message = driver.findElements(By.xpath("(//section)[1]//child::*"));
+        for (WebElement msg : message) {
+            System.out.println(msg.getText());
         }
-        YouTubeUtils.logStatus("quitDriver", "Done driver quit");
+
+        Thread.sleep(3000);
+
+        System.out.println("End Test Case : Test Case 01");
     }
 
-    @BeforeMethod
-    public void driverGet() {
-        // Navigate to https://www.youtube.com
-        driver.get("https://www.youtube.com");
+    @Test
+    public void testCase02() throws InterruptedException {
+        System.out.println("Start Test Case : Test Case 02");
+        driver.get("https://www.youtube.com/");
+
+        WebElement tripleLines = driver.findElement(By.cssSelector("#guide-icon"));
+        tripleLines.click();
+
+        Thread.sleep(7000);
+
+        WebElement films = driver.findElement(By.xpath(
+                "//div[@id='sections']//descendant::ytd-guide-section-renderer[3]/div/ytd-guide-entry-renderer[4]"));
+        films.click();
+
+        String pageTitle = driver.getTitle();
+        if (pageTitle.contains("Films")) {
+            System.out.println("Films Tab Clicked");
+        }
+
+        Thread.sleep(3000);
+
+        WebElement topSelling = driver.findElement(By.xpath("//span[text()='Top selling']"));
+        topSelling.click();
+
+        Thread.sleep(3000);
+
+        // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        // // boolean moreMovies=true;
+        // WebElement arrowButtonSelector =
+        // wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#right-arrow-button
+        // > ytd-button-renderer > yt-button-shape > button")));
+
+        // while(arrowButtonSelector.isDisplayed()){
+        // arrowButtonSelector.click();
+        // Thread.sleep(2000);
+        // }
+
     }
 
-    @Test(priority = 1, enabled = true, description = "Verify youtube url and print about page message")
-    public void TestCase001() {
-        YouTubeUtils.logStatus("TC001", "Start", "Verify youtube url and print about page message");
-        // Assert current URL contains "youtube"
-        String urlToContain = "youtube";
-        Boolean status = YouTubeUtils.verifyCurrentUrlContains(driver, urlToContain);
-        Assert.assertTrue(status, "Current url does not contain " + urlToContain);
-
-        // Locate the About link at the bottom of the sidebar and Click on "About"
-        By aboutLocator = By.xpath("//a[contains(text(), 'About')]");
-        YouTubeUtils.scrollToViewport(driver, aboutLocator);
-        ActionsWrapper.clickAW(driver, aboutLocator);
-
-        // Print the message displayed on the screen
-        By messageLocator = By.xpath("//section[contains(@class, 'about__content')]");
-        YouTubeUtils.scrollToViewport(driver, messageLocator);
-        YouTubeUtils.getDisplayedMessage(driver, messageLocator);
-        YouTubeUtils.logStatus("TC001", "End", "Verify youtube url and print about page message");
+    @Test
+    public void testCase03() throws InterruptedException {
+        System.out.println("Start Test Case : Test Case 02");
+        driver.get("https://www.youtube.com/");
     }
 
-    @Test(priority = 2, enabled = true, description = "Verify movie is marked 'A' for Mature and movie is either 'Comedy' or 'Animation'")
-    public void TestCase002() {
-        YouTubeUtils.logStatus("TC002", "Start", "Verify movie is marked 'A' for Mature and movie is either 'Comedy' or 'Animation'");
-        // Navigate to the "Films" tab
-        By filmsTab = By.xpath("//a[contains(@title, 'Films') or contains(@title, 'Movies')]");
-        YouTubeUtils.scrollToViewport(driver, filmsTab);
-        ActionsWrapper.clickAW(driver, filmsTab);
-
-        // Scroll to the extreme right within the "Top Selling" section
-        String section = "Top selling";
-        YouTubeUtils.scrollToExtreme(driver, By.xpath("//span[contains(text(), '"+ section +"')]/ancestor::div[contains(@class, 'item-section')]//button[contains(@aria-label, 'Next')]"));
-
-        // Last movie
-        By lastMovie = By.xpath("(//span[contains(text(), '"+ section +"')]/ancestor::div[contains(@class, 'item-section')]//ytd-grid-movie-renderer)[last()]");
-
-        // Soft Assert on whether the movie is marked "A" for Mature or not
-        By filmCertificationLocator = By.xpath(".//p[not(contains(text(), 'Buy') or contains(text(), 'Rent'))]");
-        String filmCertification = YouTubeUtils.getElementText(driver, lastMovie, filmCertificationLocator);
-        sa.assertEquals(filmCertification, "U", "The movie certification is not marked as 'A'");
-
-        // Soft assert on whether the movie is either "Comedy" or "Animation"
-        By movieGenreLocator = By.xpath(".//span[contains(@class, 'metadata')]");
-        String movieGenre = YouTubeUtils.getElementText(driver, lastMovie, movieGenreLocator);
-        sa.assertTrue(movieGenre.contains("Comedy") || movieGenre.contains("Animation"), "The movie genre is neither 'Comedy' nor 'Animation'");
-
-        sa.assertAll();
-        YouTubeUtils.logStatus("TC002", "End", "Verify movie is marked 'A' for Mature and movie is either 'Comedy' or 'Animation'");
+    @Test
+    public void testCase04() throws InterruptedException {
+        System.out.println("Start Test Case : Test Case 02");
+        driver.get("https://www.youtube.com/");
     }
 
-    @Test(priority = 2, enabled = true, description = "Verify number of tracks is 50 or less")
-    public void TestCase003() {
-        YouTubeUtils.logStatus("TC003", "Start", "Verify number of tracks is 50 or less");
-        // Navigate to the "Music" tab of the application
-        By musicTab = By.xpath("//a[contains(@title, 'Music')]");
-        YouTubeUtils.scrollToViewport(driver, musicTab);
-        ActionsWrapper.clickAW(driver, musicTab);
+    @Test(dataProvider = "searchTerms", dataProviderClass = ExcelDataProvider.class)
+    public void testCase05(String searchTerms) throws InterruptedException {
+        System.out.println("Start Test Case : Test Case 05");
+        driver.get("https://www.youtube.com/");
 
-        // Locate the first section of playlists
-        By firstSection = By.xpath("(//ytd-item-section-renderer)[1]");
-        YouTubeUtils.scrollToViewport(driver, firstSection);
+        System.out.println("Verify video views count: " + searchTerms);
 
-        // Scroll to the extreme right within the first section
-        YouTubeUtils.scrollToExtreme(driver, By.xpath("(//ytd-item-section-renderer)[1]//button[contains(@aria-label, 'Next')]"));
-
-        // Last playlist
-        By lastPlaylist = By.xpath("((//ytd-item-section-renderer)[1]//ytd-compact-station-renderer)[last()]");
-
-        // Print the name of the playlist
-        By playlistNameLocator = By.xpath(".//h3");
-        String playlistName = YouTubeUtils.getElementText(driver, lastPlaylist, playlistNameLocator);
-        YouTubeUtils.logStatus("TC003", "Step", "Playlist name: " + playlistName);
-
-        // Count the number of tracks listed in the playlist
-        By numberOfTrackLocator = By.xpath(".//p[contains(@id, 'video-count')]");
-        int numberOfTracks = Integer.parseInt(YouTubeUtils.getElementText(driver, lastPlaylist, numberOfTrackLocator).replaceAll("[\\D]", ""));
-        YouTubeUtils.logStatus("TC003", "Step", "Track Count: " + numberOfTracks);
-
-        // Soft assert whether the number of tracks listed is less than or equal to 50
-        sa.assertTrue((numberOfTracks <= 50), "The number of tracks listed is more than 50");
-
-        sa.assertAll();
-        YouTubeUtils.logStatus("TC003", "End", "Verify number of tracks is 50 or less");
-    }
-
-    @Test(priority = 1, enabled = true, description = "Verify news body and likes")
-    public void TestCase004() {
-        YouTubeUtils.logStatus("TC004", "Start", "Verify news body and likes");
-        // Navigate to the "News" tab of the application
-        By newsTab = By.xpath("//a[contains(@title, 'News')]");
-        YouTubeUtils.scrollToViewport(driver, newsTab);
-        ActionsWrapper.clickAW(driver, newsTab);
-
-        // Locate the "Latest News Posts" section
-        By latestNewsPosts = By.xpath("//span[contains(text(), 'Latest news post')]");
-        YouTubeUtils.scrollToViewport(driver, latestNewsPosts);
-
-        // Retrieve and print the body and the number of likes for each of the first 3 news posts
-        int numberOfNewsPosts = 3;
-        By firstNNewsLocator = By.xpath("(//span[contains(text(), 'Latest news post')]/ancestor::ytd-rich-section-renderer//ytd-post-renderer)[position() <= "+ numberOfNewsPosts +"]");
-        YouTubeUtils.getBodyAndViewCount(driver, firstNNewsLocator);
-        YouTubeUtils.logStatus("TC004", "End", "Verify news body and likes");
-    }
-
-    @Test(priority = 1, enabled = true, description = "Verify video views count", dataProvider = "searchTerms", dataProviderClass = ExcelDataProvider.class)
-    public void TestCase005(String searchTerms) {
-        YouTubeUtils.logStatus("TC005", "Start", "Verify video views count: " + searchTerms);
-        // Search for the item
-        By searchBox = By.xpath("//input[contains(@id, 'search')]");
-        ActionsWrapper.sendKeysAW(driver, searchBox, searchTerms);
-
-        // Scroll through the search results until the total views for the videos reach 10 crore
+        WebElement searchBox = driver.findElement(By.xpath("//input[contains(@id, 'search')]"));
+        searchBox.sendKeys(searchTerms);
         long totalCount = 10_00_00_000;
-        YouTubeUtils.scrollTillVideoCountReaches(driver, totalCount);
-        YouTubeUtils.logStatus("TC005", "End", "Verify video views count: " + searchTerms);
+        long totalViewsInCrores = 0;
+
+        List<WebElement> views = driver.findElements(By.xpath("//*[@id='metadata-line']/span[1]"));
+
+        for (WebElement v : views) {
+            Pattern pattern = Pattern.compile("(\\d+)([kKmM]?) views");
+            Matcher matcher = pattern.matcher((CharSequence) v);
+
+            if (matcher.find()) {
+                int number = Integer.parseInt(matcher.group(1));
+                String suffix = matcher.group(2).toLowerCase();
+
+                if (suffix.equals("k")) {
+                    number *= 1000;
+                } else if (suffix.equals("m")) {
+                    number *= 1000000;
+                }
+
+                totalViewsInCrores += number;
+                if (totalViewsInCrores == totalCount) {
+                    System.out.println("End Test Case");
+                }
+            }
+        }
+
+        // for(WebElement v : views){
+        // String s= v.getText();
+        // String[] parts = s.split("\\D+");
+        // if (parts.length > 0) {
+        // String numberStr = parts[0];
+        // int number = Integer.parseInt(numberStr);
+
+        // }
+
+    }
+
+    @AfterTest
+    public void endTest() {
+        driver.close();
+        driver.quit();
     }
 }

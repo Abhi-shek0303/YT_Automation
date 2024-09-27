@@ -1,5 +1,6 @@
-
 package demo.utils;
+
+//package demo.utils;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -103,6 +104,7 @@ public class YouTubeUtils {
 
             // Find the element containing the displayed message
             WebElement messageElement = driver.findElement(locator);
+            System.out.println(messageElement.getText());
 
             // Print the displayed message
             logStatus("getDisplayedMessage", "Printing message\n" + messageElement.getText());

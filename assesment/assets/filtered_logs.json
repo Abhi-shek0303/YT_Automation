@@ -1,0 +1,108 @@
+{
+    "actions": [
+        {
+            "COMMAND": null,
+            "RESPONSE": null
+        },
+        {
+            "COMMAND": "[1727421859.291][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND InitSession {\"capabilities\": {\"firstMatch\": [ {\"browserName\": \"chrome\",\"goog:chromeOptions\": {\"args\": [ \"--remote-allow-origins=*\" ],\"binary\": \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\",\"extensions\": [  ]},\"goog:loggingPrefs\": {\"browser\": \"ALL\",\"driver\": \"ALL\"}} ]}}",
+            "RESPONSE": "[1727421860.103][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE InitSession {\"capabilities\": {\"acceptInsecureCerts\": false,\"browserName\": \"chrome\",\"browserVersion\": \"129.0.6668.70\",\"chrome\": {\"chromedriverVersion\": \"129.0.6668.70 (df87d5cf12b1397be7495a04cab2db6239b227a8-refs/branch-heads/6668@{#1420})\",\"userDataDir\": \"C:\\\\Windows\\\\SystemTemp\\\\scoped_dir14604_689539950\"},\"fedcm:accounts\": true,\"goog:chromeOptions\": {\"debuggerAddress\": \"localhost:49401\"},\"networkConnectionEnabled\": false,\"pageLoadStrategy\": \"normal\",\"platformName\": \"windows\",\"proxy\": {},\"setWindowRect\": true,\"strictFileInteractability\": false,\"timeouts\": {\"implicit\": 0,\"pageLoad\": 300000,\"script\": 30000},\"unhandledPromptBehavior\": \"dismiss and notify\",\"webauthn:extension:credBlob\": true,\"webauthn:extension:largeBlob\": true,\"webauthn:extension:minPinLength\": true,\"webauthn:extension:prf\": true,\"webauthn:virtualAuthenticators\": true},\"sessionId\": \"8c95c454023d81a816802c39afce4f6d\"}"
+        },
+        {
+            "COMMAND": "[1727421860.414][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND MaximizeWindow {}",
+            "RESPONSE": "[1727421860.473][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE MaximizeWindow {\"height\": 744,\"width\": 1382,\"x\": -8,\"y\": -8}"
+        },
+        {
+            "COMMAND": "[1727421860.509][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND Navigate {\"url\": \"https://www.youtube.com/\"}",
+            "RESPONSE": "[1727421868.953][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE Navigate"
+        },
+        {
+            "COMMAND": "[1727421868.986][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND GetUrl {}",
+            "RESPONSE": "[1727421869.306][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE GetUrl \"https://www.youtube.com/\""
+        },
+        {
+            "COMMAND": "[1727421869.327][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND FindElement {\"using\": \"css selector\",\"value\": \"#guide-icon\"}",
+            "RESPONSE": "[1727421869.389][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE FindElement {\"element-6066-11e4-a52e-4f735466cecf\": \"f.770CCC8B1F82B52E93CD5419605AF2EA.d.40F05AF969031C7F86872762D495CA55.e.107\"}"
+        },
+        {
+            "COMMAND": "[1727421869.423][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND ClickElement {\"id\": \"f.770CCC8B1F82B52E93CD5419605AF2EA.d.40F05AF969031C7F86872762D495CA55.e.107\"}",
+            "RESPONSE": "[1727421870.222][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE ClickElement"
+        },
+        {
+            "COMMAND": "[1727421870.288][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND FindElement {\"using\": \"xpath\",\"value\": \"//a[text()='About']\"}",
+            "RESPONSE": "[1727421870.551][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE FindElement {\"element-6066-11e4-a52e-4f735466cecf\": \"f.770CCC8B1F82B52E93CD5419605AF2EA.d.40F05AF969031C7F86872762D495CA55.e.185\"}"
+        },
+        {
+            "COMMAND": "[1727421870.606][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND IsElementEnabled {\"id\": \"f.770CCC8B1F82B52E93CD5419605AF2EA.d.40F05AF969031C7F86872762D495CA55.e.185\"}",
+            "RESPONSE": "[1727421870.619][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE IsElementEnabled true"
+        },
+        {
+            "COMMAND": "[1727421870.624][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND ClickElement {\"id\": \"f.770CCC8B1F82B52E93CD5419605AF2EA.d.40F05AF969031C7F86872762D495CA55.e.185\"}",
+            "RESPONSE": "[1727421873.104][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE ClickElement"
+        },
+        {
+            "COMMAND": "[1727421873.108][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND FindElements {\"using\": \"xpath\",\"value\": \"(//section)[1]//child::*\"}",
+            "RESPONSE": "[1727421873.126][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE FindElements [ {\"element-6066-11e4-a52e-4f735466cecf\": \"f.770CCC8B1F82B52E93CD5419605AF2EA.d.6AF487FE277EBC68DDE55F3AE4C32DA2.e.19\"}, {\"element-6066-11e4-a52e-4f735466cecf\": \"f.770CCC8B1F82B52E93CD5419605AF2EA.d.6AF487FE277EBC68DDE55F3AE4C32DA2.e.20\"}, {\"element-6066-11e4-a52e-4f735466cecf\": \"f.770CCC8B1F82B52E93CD5419605AF2EA.d.6AF487FE277EBC68DDE55F3AE4C32DA2.e.21\"}, {\"element-6066-11e4-a52e-4f735466cecf\": \"f.770CCC8B1F82B52E93CD5419605AF2EA.d.6AF487FE277EBC68DDE55F3AE4C32DA2.e.22\"} ]"
+        },
+        {
+            "COMMAND": "[1727421873.132][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND GetElementText {\"id\": \"f.770CCC8B1F82B52E93CD5419605AF2EA.d.6AF487FE277EBC68DDE55F3AE4C32DA2.e.19\"}",
+            "RESPONSE": "[1727421873.149][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE GetElementText \"About YouTube\""
+        },
+        {
+            "COMMAND": "[1727421873.154][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND GetElementText {\"id\": \"f.770CCC8B1F82B52E93CD5419605AF2EA.d.6AF487FE277EBC68DDE55F3AE4C32DA2.e.20\"}",
+            "RESPONSE": "[1727421873.169][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE GetElementText \"Our mission is to give everyone a voice and show them the world.\""
+        },
+        {
+            "COMMAND": "[1727421873.173][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND GetElementText {\"id\": \"f.770CCC8B1F82B52E93CD5419605AF2EA.d.6AF487FE277EBC68DDE55F3AE4C32DA2.e.21\"}",
+            "RESPONSE": "[1727421873.192][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE GetElementText \"We believe that everyone deserves to have a voice, and that the world is a better place when we listen, share and build community through our stories.\""
+        },
+        {
+            "COMMAND": "[1727421873.200][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND GetElementText {\"id\": \"f.770CCC8B1F82B52E93CD5419605AF2EA.d.6AF487FE277EBC68DDE55F3AE4C32DA2.e.22\"}",
+            "RESPONSE": "[1727421873.218][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE GetElementText \"\""
+        },
+        {
+            "COMMAND": "[1727421876.229][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND Navigate {\"url\": \"https://www.youtube.com/\"}",
+            "RESPONSE": "[1727421879.183][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE Navigate"
+        },
+        {
+            "COMMAND": "[1727421879.204][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND FindElement {\"using\": \"css selector\",\"value\": \"#guide-icon\"}",
+            "RESPONSE": "[1727421880.056][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE FindElement {\"element-6066-11e4-a52e-4f735466cecf\": \"f.770CCC8B1F82B52E93CD5419605AF2EA.d.7EBBB8F100D575AC970D357D45AB17BA.e.99\"}"
+        },
+        {
+            "COMMAND": "[1727421880.068][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND ClickElement {\"id\": \"f.770CCC8B1F82B52E93CD5419605AF2EA.d.7EBBB8F100D575AC970D357D45AB17BA.e.99\"}",
+            "RESPONSE": "[1727421881.099][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE ClickElement"
+        },
+        {
+            "COMMAND": "[1727421888.130][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND FindElement {\"using\": \"xpath\",\"value\": \"//div[@id='sections']//descendant::ytd-guide-section-renderer[3]/div/ytd-guide-entry-renderer[4]\"}",
+            "RESPONSE": "[1727421888.153][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE FindElement {\"element-6066-11e4-a52e-4f735466cecf\": \"f.770CCC8B1F82B52E93CD5419605AF2EA.d.7EBBB8F100D575AC970D357D45AB17BA.e.185\"}"
+        },
+        {
+            "COMMAND": "[1727421888.158][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND ClickElement {\"id\": \"f.770CCC8B1F82B52E93CD5419605AF2EA.d.7EBBB8F100D575AC970D357D45AB17BA.e.185\"}",
+            "RESPONSE": "[1727421888.333][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE ClickElement"
+        },
+        {
+            "COMMAND": "[1727421888.343][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND GetTitle {}",
+            "RESPONSE": "[1727421888.355][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE GetTitle \"YouTube\""
+        },
+        {
+            "COMMAND": "[1727421891.378][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND FindElement {\"using\": \"xpath\",\"value\": \"//span[text()='Top selling']\"}",
+            "RESPONSE": "[1727421891.401][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE FindElement {\"element-6066-11e4-a52e-4f735466cecf\": \"f.770CCC8B1F82B52E93CD5419605AF2EA.d.7EBBB8F100D575AC970D357D45AB17BA.e.263\"}"
+        },
+        {
+            "COMMAND": "[1727421891.406][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND ClickElement {\"id\": \"f.770CCC8B1F82B52E93CD5419605AF2EA.d.7EBBB8F100D575AC970D357D45AB17BA.e.263\"}",
+            "RESPONSE": "[1727421891.512][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE ClickElement"
+        },
+        {
+            "COMMAND": "[1727421894.547][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND Navigate {\"url\": \"https://www.youtube.com/\"}",
+            "RESPONSE": "[1727421899.700][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE Navigate"
+        },
+        {
+            "COMMAND": "[1727421899.713][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND Navigate {\"url\": \"https://www.youtube.com/\"}",
+            "RESPONSE": "[1727421901.778][INFO]: [8c95c454023d81a816802c39afce4f6d] RESPONSE Navigate"
+        },
+        {
+            "COMMAND": "[1727421901.793][INFO]: [8c95c454023d81a816802c39afce4f6d] COMMAND CloseWindow {}",
+            "RESPONSE": null
+        }
+    ]
+}
